@@ -1,0 +1,51 @@
+//***************************************************************************************
+// Distance.java            Author: Michelle Holmes   
+//
+// The following program reads the (x,y) coordinates for two points and calculates the 
+// distance.
+//***************************************************************************************
+import java.util.Scanner;     			  // Imports Scanner Object
+import java.text.DecimalFormat;           // Imports DecimalFormat Object
+
+public class Distance 
+{
+	//------------------------------------------------------------------------------------
+	// Reads (x,y) coordinates for two points inputed by user
+	// and calculates the distance of these points.
+	//------------------------------------------------------------------------------------
+	public static void main(String[] args) 
+	{
+		int x1, x2, y1, y2;                     // Declares integer variables
+		double distance, num1, num2;    // Declares double floating point variables
+		
+		Scanner scan = new Scanner (System.in);
+		System.out.println("What is the first number in first point? "); 
+		x1 = scan.nextInt();					// User inputs first number of first point
+		
+		System.out.println("What is the second number in first point? ");
+		y1 = scan.nextInt();				   // User inputs second number of first point
+		
+		System.out.println("What is the first number in second point? ");
+		x2 = scan.nextInt();				 // User inputs first number of second point
+		
+		System.out.println("What is the second number in second point? ");
+		y2 = scan.nextInt();				// User inputs second number of second point
+		
+		System.out.println("The (x,y) coordinates for your two points are: " + "(" + x1 + "," + y1 + ")" + 
+		" and " + "(" + x2 + "," + y2 + ").");   // Displays the (x,y) coordinates of two points 
+		
+		System.out.println("x1 = " + x1 + " \tx2 = " + x2);  // Displays which coordinates are the x coordinates
+		System.out.println("y1 = " + y1 + " \ty2 = " + y2);  // Displays which coordinates are the y coordinates
+	
+		num1 = Math.pow((x2 - x1), 2);      // Calculates x2 - x1 raised to the power of two
+		num2 = Math.pow((y2 - y1), 2);     // Calculates y2 - y1 raised to the power of two
+		distance = Math.sqrt((num1 + num2)); // Calculates the square root of num1 + num2
+		
+		DecimalFormat numform = new DecimalFormat("0.###");  // Sets the format for the output to three
+															 // decimal places without trailing zero's
+		
+		System.out.println("The distance between these two points is: " +    
+		numform.format(distance));   // Outputs formatted distance of two (x,y) Coordinates
+	}
+
+}
